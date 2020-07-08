@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ int num,i,arr[100],t;
+ clrscr();
+ 
+ // Taking size as input 
+ printf("Enter the size of array : ");
+ scanf("%d",&num);
+ 
+ //Taking elements
+ printf("Enter the elements in array :");
+
+
+ for(i=0 ; i<num ; i++)
+ {
+	scanf("%d",&arr[i]);
+ }
+
+ for(i=0 ; i<num ; i++)
+ {
+	for(int j=i+1 ; j<num ; j++)
+  //starting with next to the selected element
+	{
+		if(arr[i]>arr[j])
+		{
+			t=arr[j];
+			arr[j]=arr[i];
+			arr[i]=t;
+		}
+	}
+ }
+ printf("After Sorting :\n");
+
+ for(i=0 ; i<num ; i++)
+ {
+	printf("%d ,",arr[i]);
+ }
+ printf("\b \b");
+ getch();
+}
+
+
+/*
+In this sorting we select the first element in the outer loop 
+then the selected element will be compared with the next element i.e. j=i+1
+thus the passes will be repeated until the array becomes sorted
+*/
