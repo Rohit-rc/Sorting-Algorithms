@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ int num,i,arr[100],t;
+ clrscr();
+ printf("Enter the size of array : ");
+ scanf("%d",&num);
+ printf("Enter the elements in array :");
+
+ for(i=0 ; i<num ; i++)
+ {
+	scanf("%d",&arr[i]);
+ }
+
+ for(i=0 ; i<num-1 ; i++)
+ {
+	for(int j=0 ; j<num-1-i ; j++)
+	{
+		if(arr[j]>arr[j+1])
+		{
+			t=arr[j];
+			arr[j]=arr[j+1];
+			arr[j+1]=t;
+		}
+	}
+ }
+ printf("After Sorting :\n");
+
+ for(i=0 ; i<num ; i++)
+ {
+	printf("%d ,",arr[i]);
+ }
+ printf("\b \b");
+ getch();
+}
